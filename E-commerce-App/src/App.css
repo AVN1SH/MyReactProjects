@@ -60,7 +60,13 @@ body h1 {
 
 .banner-image {
   background-color : pink;
-  height : 320px;
+  height : 360px;
+}
+
+.banner-image img {
+  width : 100%;
+  object-fit : cover;
+  object-position : top;
 }
 
 
@@ -83,25 +89,32 @@ body h1 {
 }
 
 .box-image {
-  height : 250px;
+  background-color : white;
+  height : 70%;
   width : 100%;
+  object-fit :contain;
 }
 
-@media (max-width : 1080px) {
+@media (max-width : 800px) {
   .boxes {
     grid-template-columns: 1fr;
   }
 }
 
-@media (min-width : 1081px) and (max-width : 1710px) {
+@media (min-width : 800.01px) and (max-width : 1310px) {
   .boxes {
     grid-template-columns: 1fr 1fr;
   }
 }
-
-@media (min-width : 1711px) {
+@media (min-width : 1310.01px) and (max-width : 1875px) {
   .boxes {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width : 1875.01px) {
+  .boxes {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -115,6 +128,12 @@ body h1 {
 
 .small-box {
   background-color: pink;
+  height : 350px;
+}
+
+.small-box img {
+  width : 100%;
+  height : 250px;
 }
 
 @media (max-width : 1080px) {

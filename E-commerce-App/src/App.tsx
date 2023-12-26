@@ -4,16 +4,21 @@ import Banner from "./components/Banner.tsx";
 import {useState} from "react";
 import Box from "./components/Box.tsx";
 import SmallBox from "./components/SmallBox.tsx"
-import bannerImage1 from '../data/images/banner-image-1.jpg';
+import bannerImage1 from './data/images/banner-image-1.jpg';
+import bannerImage2 from "./data/images/banner-image-2.webp";
+import bannerImage3 from "./data/images/banner-image-3.jpg";
+import boxImage1 from './data/images/macbook.jpg';
+import boxImage2 from "./data/images/iphone.jpg";
+import boxImage3 from "./data/images/rubick's-cube.jpg";
+import boxImage4 from "./data/images/airpod-pro.jpg";
 
 
 function App() {
   let [slideCount, setSlideCount] = useState(0);
   const bannerInfo = [
     bannerImage1,
-    "Second Banner",
-    "Third Banner",
-    "Forth Banner",
+    bannerImage2,
+    bannerImage3,
   ];
 
   const renderBanner = () => {
@@ -40,9 +45,10 @@ function App() {
       }
       <h1>Our Products</h1>
       <div className="boxes">
-        <Box />
-        <Box />
-        <Box />
+        <Box boxImage={boxImage1} />
+        <Box boxImage = {boxImage2}/>
+        <Box boxImage = {boxImage3}/>
+        <Box boxImage = "https://avn1sh.github.io/HTML-CSS-JavaScript/STOPWATCH/icons/flag.svg"/>
       </div>
       <h1>Shop From Amazon</h1>
       <div className="small-boxes">

@@ -1,7 +1,7 @@
 const SmallBox = () => {
   return (
     <div className="small-box">
-      <img className= "box-image" />
+      <img className= "small-box-image" />
       <div>
         Hello..!
       </div>

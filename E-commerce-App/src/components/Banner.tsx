@@ -1,5 +1,3 @@
-import bannerImage1 from '../data/images/banner-image-1.jpg';
-
 interface Props {
   bannerImage : string;
 }
@@ -7,7 +5,9 @@ interface Props {
 const Banner = ({bannerImage} : Props) => {
   return (
     <div>
-      <img className="banner-image" src = "require({bannerImage}).defalult"/>
+      <div className="banner-image">
+        <img className="banner-image" src = {bannerImage}/>
+      </div>
     </div>
   )
 }
