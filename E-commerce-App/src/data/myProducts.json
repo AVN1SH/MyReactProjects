@@ -1,0 +1,63 @@
+{
+  "products" : [
+    {
+      "name" : "Apple 2023 MacBook Pro (16-inch, M3 Max chip with 16‑core CPU and 40‑core GPU, 48GB Unified Memory, 1TB) - Space Black",
+      "img" : "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/images/macbook.jpg",
+      "price" : 399900,
+      "rating" : 1,
+      "ratingImg" : [
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_FILL0_wght400_GRAD0_opsz24",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_FILL0_wght400_GRAD0_opsz24",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_FILL0_wght400_GRAD0_opsz24",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_FILL0_wght400_GRAD0_opsz24"
+      ],
+      "verified" : "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/task_alt_FILL0_wght400_GRAD0_opsz24"
+    },
+    
+    {
+      "name" : "Apple iPhone 15 Pro Max (256 GB) - White Titanium",
+      "img" : "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/images/iphone.jpg",
+      "price" : 156900,
+      "rating" : 4.5,
+      "ratingImg" : [
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_half_FILL0_wght400_GRAD0_opsz24"
+      ],
+      "verified" : "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/task_alt_FILL0_wght400_GRAD0_opsz24"
+    },
+
+    {
+      "name" : "GAN 12 Maglev UV Coated, 3x3 Stickerless Speed Cube Goose 356 Magic Puzzle Cube Toy 2021 Flagship (Primary Internal/White Interior)",
+      "img" : "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/images/rubick's-cube.jpg",
+      "price" : 13925,
+      "rating" : 4.6,
+      "ratingImg" : [
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_half_FILL0_wght400_GRAD0_opsz24"
+      ],
+      "verified" : "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/task_alt_FILL0_wght400_GRAD0_opsz24"
+    },
+
+    {
+      "name" : "Apple AirPods Pro (2nd Generation) ",
+      "img" : "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/images/airpod-pro.jpg",
+      "price" : 18999,
+      "rating" : 4.4,
+      "ratingImg" : [
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_black_24dp.svg",
+        "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/star_half_FILL0_wght400_GRAD0_opsz24"
+      ],
+      "verified" : "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/task_alt_FILL0_wght400_GRAD0_opsz24"
+    }
+  ]
+}
