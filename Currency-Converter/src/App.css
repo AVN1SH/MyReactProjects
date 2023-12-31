@@ -1,0 +1,66 @@
+.outer-div {
+  background-color: rgba(137, 43, 226, 0.208);
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  width : 490px;
+  height : 300px;
+  border-radius: 30px;
+}
+
+
+.input-box {
+  background-color: white;
+  width : 430px;
+  height : 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius : 20px;
+  margin-top : 10px;
+}
+
+.input-price {
+  border : none;
+  margin-left : 10px;
+  margin-right : -10px;
+  font-size : 25px;
+  outline : none;
+}
+
+
+.select-box {
+  padding : 3px;
+  border : none;
+  border-inline : none;
+  margin-right : 10px;
+  background-color: rgba(139, 139, 139, 0.249);
+  font-size : 20px;
+  border-radius: 10px;
+  outline : none;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: blueviolet;
+  padding : 3px 6px 5px 6px;
+  border-radius: 6px;
+  margin-top : 83px;
+  border-style : solid;
+  border-color : white;
+  border-width : 2px;
+  color : white;
+}
+
+.convert-button {
+  width : 430px;
+  height : 80px;
+  font-size : 25px;
+  border-radius: 20px;
+  margin-top : 10px;
+  color : white;
+  background-color: blueviolet;
+  border: none;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+}

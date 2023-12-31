@@ -1,23 +1,27 @@
+import {Link, NavLink} from "react-router-dom";
+
 const LeftSideBar = () => {
   return (
     <div className = "left-side-bar">
       <div>
-        <button>first</button>
+        <Link to = "/" >
+          <button>Tranding</button>
+        </Link>
       </div>
       <div>
-        <button>second</button>
+        <button>Men's Fashion</button>
       </div>
       <div>
-        <button>third</button>
+        <button>Mobiles & Computers</button>
       </div>
       <div>
-        <button>forth</button>
+        <button>Electronics</button>
       </div>
       <div>
-        <button>fifth</button>
+        <button>customer Service</button>
       </div>
       <div>
-        <button>sixth</button>
+        <button>Sign in</button>
       </div>
     </div>
   )

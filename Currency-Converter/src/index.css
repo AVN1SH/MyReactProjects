@@ -1,0 +1,8 @@
+@import "./App.css";
+
+body {
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(63, 63, 63);
+}

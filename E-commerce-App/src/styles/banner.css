@@ -1,0 +1,12 @@
+
+.banner-image {
+  background-color : pink;
+  height : 310px;
+}
+
+.banner-image img {
+  width : 100%;
+  object-fit : cover;
+  object-position : top;
+}
+

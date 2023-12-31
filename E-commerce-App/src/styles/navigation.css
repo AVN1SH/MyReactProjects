@@ -1,0 +1,72 @@
+.nav-bar {
+  position : fixed;
+  top : 0;
+  left : 0;
+  right : 0;
+  display : flex;
+  flex-direction : row;
+  height : 50px;
+  background-color : rgb(44, 44, 44);
+  align-items : center;
+  justify-content : space-between;
+}
+
+.left-part {
+  width : 300px;
+  height: 100%;
+  background-color : pink;
+  display : flex;
+  align-items: center;
+}
+
+.logo {
+  width : 80px;
+  height : 80%;
+  object-fit : fill;
+}
+
+.name {
+  font-family : Lilita One;
+  color : rgb(40, 108, 203);
+  font-weight : bold;
+  font-size : 45px;
+}
+
+.middle-part {
+  width : 700px;
+  height : 100%;
+  background-color : lightblue;
+  display : flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.middle-part input {
+  flex : 1;
+  margin-left : 30px;
+  padding : 8px 0;
+  font-size : 22px;
+  padding-inline-start: 10px;
+  padding-inline-end : 10px;
+}
+
+.middle-part img {
+  width: 45px;
+  background-color: rgb(51, 166, 254);
+  margin-right : 30px;
+}
+
+.right-part {
+  width : 300px;
+  height : 100%;
+  background-color : pink;
+  display : grid;
+  grid-template-columns: 70px 60px;
+  align-items: center;
+  justify-content: right;
+}
+
+.right-part img {
+  width : 40px;
+  background-color: rgba(0, 0, 0, 0.244);
+}
