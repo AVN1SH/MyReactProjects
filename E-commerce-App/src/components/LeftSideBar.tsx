@@ -4,24 +4,34 @@ const LeftSideBar = () => {
   return (
     <div className = "left-side-bar">
       <div>
-        <Link to = "/" >
-          <button>Tranding</button>
+        <Link to = "/trending" >
+          <button>Trending</button>
         </Link>
       </div>
       <div>
-        <button>Men's Fashion</button>
+        <Link to = "/mens-fashions" >
+          <button>Men's Fashion</button>
+        </Link>
       </div>
       <div>
-        <button>Mobiles & Computers</button>
+        <Link to = "/mobiles-computers" >
+          <button>Mobiles & Computers</button>
+        </Link>
       </div>
       <div>
-        <button>Electronics</button>
+        <Link to = "/electronics">
+          <button>Electronics</button>
+        </Link>
       </div>
       <div>
-        <button>customer Service</button>
+        <Link to = "/customer-service">
+          <button>customer Service</button>
+        </Link>
       </div>
       <div>
-        <button>Sign in</button>
+        <Link to = "/sign-in">
+          <button>Sign in</button>
+        </Link>
       </div>
     </div>
   )
