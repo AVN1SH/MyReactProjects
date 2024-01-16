@@ -6,7 +6,6 @@ import {useState, useEffect} from "react";
 import {useDispatch} from "react-redux";
 import authService from "./appwrite/auth.ts";
 import {login, logout} from "./features/authSlice.ts"
-
 function App() {
 
   const [loading, setLoading] = useState(true);
@@ -23,6 +22,7 @@ function App() {
       })
       .finally(() => setLoading(false))
   }), []) 
+
   return (
     <div>
       <NavigationBar />

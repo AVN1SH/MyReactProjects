@@ -2,13 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './App.css'
-import Home from "./components/Home.tsx"
+import Home from "./pages/Home.tsx"
 import List from "./components/product-layout/List.tsx"
 
 import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from "react-router-dom";
 
 import {Provider} from "react-redux";
 import store from "./store/store.ts"
+import Signin from './pages/Signin.tsx'
+import Signup from './pages/Signup.tsx'
+import Cart from "./pages/Cart.tsx"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,8 +22,9 @@ const router = createBrowserRouter(
       <Route path='/mobiles-computers' element={<List data='mobiles and computers'/>} />
       <Route path='/electronics' element={<List data='electronics'/>} />
       <Route path='/customer-service' element={<List data='customer service'/>} />
-      <Route path='/sign-in' element={<List  data='sign in'/>} />
-
+      <Route path='/sign-in' element={<Signin />} />
+      <Route path='/sign-up' element={<Signup />} />
+      <Route path='/cart' element={<Cart />} />
     </Route>
   )
 )

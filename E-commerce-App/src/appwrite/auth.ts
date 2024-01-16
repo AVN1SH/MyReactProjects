@@ -1,7 +1,9 @@
 import conf from "../conf/conf.ts"
 import { Client, Account, ID } from "appwrite";
 
-interface CreateUserAccount {
+// import axios from "axios";
+
+export interface CreateUserAccount {
   name : string;
   email : string;
   password : string;
@@ -26,7 +28,7 @@ export class AuthService {
 
   async createAccount({name, email, password} : CreateUserAccount) {
     try {
-      const userAccount = await this.account.create(ID.unique(), name, email, password);
+      const userAccount = await this.account.create(ID.unique(), email, password, name);
 
       if (userAccount) {
         return this.login({email, password});
@@ -45,6 +47,24 @@ export class AuthService {
     } catch(error) {
         throw error;
     }
+
+    // const apiUrl = 'http://localhost:8000/api/v1/users';
+
+    // try {
+    //   const response = await axios.post(`${apiUrl}/login`, {
+    //     email,
+    //     password,
+    //   });
+  
+    //   if (response.data) {
+    //     const { accessToken, refreshToken, user } = response.data.data;
+    //     console.log('Logged in successfully:', accessToken, refreshToken, user);
+    //   } else {
+    //     console.error('Login failed:', response.data.error);
+    //   }
+    // } catch (error) {
+    //   console.error('Error during login:');
+    // }
   }
 
   async getCurrentUser() {

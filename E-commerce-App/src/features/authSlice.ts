@@ -1,6 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+export interface AuthState {
+  status : boolean;
+  userData : any;
+}
+
+
+const initialState : AuthState = {
   status : false,
   userData : null
 }

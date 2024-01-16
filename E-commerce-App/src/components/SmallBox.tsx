@@ -1,6 +1,7 @@
 import {Props} from "./Box.tsx";
 
 const SmallBox = ({boxDetails} : Props) => {
+  if(!boxDetails) return (<div>Something went wrong</div>)
   return (
     <div className="small-box">
       <img className="small-box-image" src = {boxDetails.img}/>
@@ -24,7 +25,7 @@ const SmallBox = ({boxDetails} : Props) => {
 
               <div><p>{boxDetails.rating}</p></div>
             </div>
-            <div className="small-box-verified">
+            <div className="small-box-verified">  
               <img src = {boxDetails.verified} />
               <p>Store Verified</p>
             </div>
