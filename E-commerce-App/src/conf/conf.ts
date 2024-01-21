@@ -14,8 +14,7 @@ export default conf;
 import axios from "axios"
 
 const api = axios.create({
-  baseURL : "http://localhost:8000",
+  baseURL : `${import.meta.env.VITE_MY_API_URI}/api/v1/users`,
   withCredentials : true
 })
-
 export {api}

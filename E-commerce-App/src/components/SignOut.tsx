@@ -1,12 +1,12 @@
 import { logout } from "../features/authSlice";
 import { useDispatch } from "react-redux";
-import authService from "../appwrite/auth";
+import expressService from "../appwrite/express";
 
 const SignOut = () => {
   const dispatch = useDispatch();
   const handleOnClick = async () => {
     try {
-      await authService.logout();
+      await expressService.logout();
       dispatch(logout());
     } catch (error) {
         throw error;

@@ -12,6 +12,7 @@ import store from "./store/store.ts"
 import Signin from './pages/Signin.tsx'
 import Signup from './pages/Signup.tsx'
 import Cart from "./pages/Cart.tsx"
+import Profile from "./pages/Profile.tsx"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route path='/sign-in' element={<Signin />} />
       <Route path='/sign-up' element={<Signup />} />
       <Route path='/cart' element={<Cart />} />
+      <Route path="/profile" element={<Profile />} />
     </Route>
   )
 )

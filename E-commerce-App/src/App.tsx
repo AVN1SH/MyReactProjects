@@ -4,7 +4,7 @@ import LeftSideBar from "./components/LeftSideBar.tsx";
 import {Outlet} from "react-router-dom";
 import {useState, useEffect} from "react";
 import {useDispatch} from "react-redux";
-import authService from "./appwrite/auth.ts";
+import expressService from "./appwrite/express.ts";
 import {login, logout} from "./features/authSlice.ts"
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect((() => {
-    authService.getCurrentUser()
+    expressService.getCurrentUser()
       .then((userData) => {
         if(userData) {
           dispatch(login({userData}))

@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {login as authSignIn} from "../features/authSlice";
 import Input from "./Input";
-import authService from '../appwrite/auth';
+import expressService from '../appwrite/express';
 import {useForm} from "react-hook-form";
 import { useDispatch } from 'react-redux';
 
@@ -17,10 +17,10 @@ const SignIn = () => {
     setError("")
     try {
 
-      const session = await authService.login(data);
+      const session = await expressService.login(data);
 
       if(session) {
-        const userData = await authService.getCurrentUser();
+        const userData = await expressService.getCurrentUser();
         if(userData) {
           dispatch(authSignIn(userData));
           navigate("/");

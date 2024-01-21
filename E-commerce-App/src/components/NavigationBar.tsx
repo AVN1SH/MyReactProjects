@@ -21,13 +21,13 @@ const NavigationBar = () => {
 
       <div className = "right-part">
         {
-          !authStatus && <Link to="/sign-up">
+          !authStatus && <Link to="/sign-in">
             <img src = "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/person_add_FILL0_wght400_GRAD0_opsz24.svg" />
           </Link>
         }
 
         {
-          authStatus &&  <Link to="/sign-in">
+          authStatus &&  <Link to="/profile">
             <img src="https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/person_FILL0_wght400_GRAD0_opsz24.svg" />
           </Link>
         }

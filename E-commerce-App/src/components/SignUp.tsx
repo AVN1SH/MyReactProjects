@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import authService from '../appwrite/auth';
+import expressService from '../appwrite/express';
 import {Link, useNavigate} from "react-router-dom";
 import {login} from "../features/authSlice";
 import Input from "./Input";
@@ -14,9 +14,9 @@ const SignUp = () => {
 
   const create = async (data:any) => {
     try {
-      const userData = await authService.createAccount(data);
+      const userData = await expressService.createAccount(data);
       if(userData) {
-        const userData = await authService.getCurrentUser();
+        const userData = await expressService.getCurrentUser();
         if(userData) dispatch(login(userData));
         navigate("/");
       }
