@@ -1,6 +1,6 @@
 import productInfo from "../data/myProducts.json";
-import Box from "../components/Box.tsx";
-import SmallBox from "../components/SmallBox.tsx"
+import Box from "../components/product-layout/Box.tsx";
+import SmallBox from "../components/product-layout/SmallBox.tsx"
 import Banner from "../components/Banner.tsx";
 import {useEffect, useState} from "react";
 // import axios from "axios";
