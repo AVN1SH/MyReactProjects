@@ -4,11 +4,13 @@
 @import "./styles/smallBoxes.css";
 @import "./styles/leftSideBar.css";
 @import "./styles/navigation2.css";
+@import "./styles/cart.css";
 
 body {
   margin : 0;
   padding: 90px 10px 10px 260px;
   font-family : Roboto, sans-serif; 
+  background-color: whitesmoke;
 }
 
 body h1 {

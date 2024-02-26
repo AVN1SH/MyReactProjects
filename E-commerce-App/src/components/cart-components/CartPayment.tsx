@@ -13,24 +13,24 @@ const CartPayment = () => {
 
 
   return (
-    <div>
-      <div>
-        <div>
+    <div className="cart-payment-outer-container">
+      <div className="cart-payment-payment-summary-container">
+        <div className="cart-payment-sub-total">
           <p>Sub Total : </p>
           <p>{totalItemPrice.toLocaleString("en-IN", {
             style : "currency",
             currency : "INR"
           })}</p>
         </div>
-        <div>
+        <div className="cart-payment-discount">
           <p>Discount : </p>
           <p>price</p>
         </div>
-        <div>
+        <div className="cart-payment-shipping-charge">
           <p>Shipping Charge : </p>
           <p>{totalItemPrice >=500 ? "Free" : "₹500"}</p>
         </div>
-        <div>
+        <div className="cart-payment-total-amount">
           <h5>Total : </h5>
           <h5>{(totalItemPrice >= 500 ? totalItemPrice : totalItemPrice + 500).toLocaleString("en-IN", {
             style : "currency",
@@ -38,7 +38,7 @@ const CartPayment = () => {
           })}</h5>
         </div>
       </div>
-        <button>Continue to Payment</button>
+        <button className="cart-continue-payment-button">Continue to Payment</button>
     </div>
   )
 }

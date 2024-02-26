@@ -36,9 +36,9 @@ const CartList = ({index} : Props) => {
 
     
   return (
-    <div style={{"display" : "flex", "width":"60%", "height" : "400px", "overflow" : "hidden"}}>
-      <div>
-        <img src={cartListDetails.img} style={{"width" : "65%", "height" : "auto"}}/>
+    <div className="individual-cart-list-container">
+      <div className="cart-product-image-select-container">
+        <img src={cartListDetails.img} />
         <select value={selectedQty} onChange={handleSelectOnChange}>
           {selectQuantity && selectQuantity.map((value, i) => 
           cartListDetails.quantity === value 
@@ -46,18 +46,18 @@ const CartList = ({index} : Props) => {
           : <option key={i}>{value >= 10 ? "10+" : value}</option>)}
         </select>
       </div>
-      <div>
-        <h4>
-        {cartListDetails.name.length >= 85 ? cartListDetails.name.slice(0, 85) + "...." : cartListDetails.name}
+      <div className="cart-product-details-container">
+        <h4 className="cart-product-title">
+        {cartListDetails.name.length >= 120 ? cartListDetails.name.slice(0, 120) + "...." : cartListDetails.name}
         </h4>
-        <p>
+        <p className="cart-product-description">
           Description
         </p>
-        <div>
+        <div className="cart-product-stored-verified">
           <img src={cartListDetails.verified}/>
           <p>Store Verified</p>
         </div>
-        <div>
+        <div className="cart-product-price-stock-remove-container">
           <p>{cartListDetails.price.toLocaleString("en-IN", {
             style : "currency",
             currency : "INR"

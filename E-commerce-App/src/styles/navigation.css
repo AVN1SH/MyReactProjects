@@ -9,6 +9,7 @@
   background-color : rgb(44, 44, 44);
   align-items : center;
   justify-content : space-between;
+  z-index: 2;
 }
 
 .left-part {

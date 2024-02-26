@@ -1,0 +1,100 @@
+.cart-page {
+  height: 100vh;
+}
+.cart-product-list {
+  width : 70%;
+  height : 100vh;
+}
+/* individual product container, component : CartList.tsx */
+.individual-cart-list-container {
+  display : flex;
+  margin-bottom : 10px;
+  flex-direction : row;
+  height : 170px;
+  background-color: white;
+  width: 100%;
+}
+.cart-product-image-select-container {
+  position: relative;
+  background-color: white;
+  width : 20%;
+  height: 100%;
+  z-index: 1;
+}
+.cart-product-image-select-container img {
+  width : 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.cart-product-image-select-container select {
+  position: absolute;
+  bottom : 2%;
+  right : 2%;
+}
+.cart-product-details-container {
+  display : flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: space-between;
+  margin : 10px;
+}
+.cart-product-title {
+  margin : 0;
+}
+.cart-product-description {
+  margin : 0;
+}
+.cart-product-stored-verified {
+  display : grid;
+  grid-template-columns: 30px 100px;
+  align-items: center;
+}
+.cart-product-stored-verified p {
+  margin : 0;
+}
+.cart-product-price-stock-remove-container {
+  display : flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart-product-price-stock-remove-container p {
+  font-weight: 500;
+  margin : 0;
+}
+.cart-product-price-stock-remove-container p:nth-child(1) {
+  font-weight: bold;
+  font-size: 19px;
+}
+
+/* cart payment summary  */
+
+.cart-payment-summary {
+  position: fixed;
+  right : 20px;
+  top : 90px;
+  left : 76%;
+}
+
+.cart-payment-outer-container {
+  display : flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cart-payment-payment-summary-container {
+  display: flex;
+  flex-direction : column;
+  justify-content: space-between;
+}
+
+.cart-payment-sub-total, .cart-payment-discount, .cart-payment-shipping-charge, .cart-payment-total-amount {
+  display : flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding : 10px;
+}
+
+.cart-continue-payment-button {
+  padding : 20px;
+}

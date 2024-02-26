@@ -14,11 +14,11 @@ const Cart = () => {
     dispatch(restore())
   },[])
   return (
-    <div>
-      <div className="product-list">
+    <div className="cart-page">
+      <div className="cart-product-list">
         {cartItems.map((_, index) => <CartList key= {index} index={index} />)}
       </div>
-      <div>
+      <div className="cart-payment-summary">
         <CartPayment />
       </div>
     </div>
