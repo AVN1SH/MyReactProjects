@@ -1,10 +1,10 @@
 import {Link, NavLink} from "react-router-dom";
 import {useSelector} from "react-redux"
-import { AuthState } from '../features/authSlice';
+import { RootState } from '../store/store';
 
 
 const LeftSideBar = () => {
-  const authStatus = useSelector((state : AuthState) => state.status);
+  const authStatus = useSelector((state : RootState) => state.authSlice.status);
   return (
     <div className = "left-side-bar">
       <div>

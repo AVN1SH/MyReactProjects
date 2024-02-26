@@ -65,10 +65,10 @@ const Home = () => {
       }
       <h1>Our Products</h1>
       <div className="boxes">
-        {
+        {/* {
           productInfo.map((product) => (<Box key={product.name} boxDetails={product} />))
-        }
-        <Box boxDetails=  {productInfo[0]} />
+        } */}
+        <Box boxDetails = {productInfo[0]}/>
         <Box boxDetails = {productInfo[1]}/>
         <Box boxDetails = {productInfo[2]}/>
         <Box boxDetails = {productInfo[3]}/>

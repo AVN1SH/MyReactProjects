@@ -1,12 +1,12 @@
 import logoIcon from '../data/icons/shop-bag.svg';
 import { useSelector } from 'react-redux';
-import { AuthState } from '../features/authSlice';
+import { RootState } from '../store/store';
 import {Link, Navigate} from "react-router-dom";
 import SignOut from './SignOut';
 
 
 const NavigationBar = () => {
-  const authStatus = useSelector((state : AuthState) => state.status);
+  const authStatus = useSelector((state : RootState) => state.authSlice.status);
   return (
     <div className = "nav-bar">
       <div className = "left-part">
