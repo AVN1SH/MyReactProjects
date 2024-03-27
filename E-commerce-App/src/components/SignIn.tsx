@@ -5,6 +5,8 @@ import Input from "./Input";
 import expressService from '../appwrite/express';
 import {useForm} from "react-hook-form";
 import { useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -32,8 +34,8 @@ const SignIn = () => {
   }
 
   return (
-    <div>
-      <div>
+    <div className="form-container">
+      <div className="form-info-container">
         <h2>Sign-in to your account</h2>
         <p>
           Dont't have any account? : <Link to="/sign-up">Click here</Link>
@@ -41,7 +43,7 @@ const SignIn = () => {
         {error && <p>{error}</p>}
       </div>
       <form onSubmit={handleSubmit(SignIn)}>
-        <div>
+        <div className="inner-form-container">
           <Input label = "Email" placeholder="Enter your email" type="email" {...register("email", {
             required : true, 
             validate : {
@@ -50,7 +52,7 @@ const SignIn = () => {
             })}
           />
 
-          <Input label = "Password" placeholder="Enter password" type="password" {...register("password", {
+          <Input label = "Password" placeholder="Enter your password" type="password" {...register("password", {
             required : true, 
             validate : {
               matchPattern : (value) => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(value) || "password must be valid"
@@ -60,7 +62,7 @@ const SignIn = () => {
 
             <button 
               type="submit"
-            >Sign-in</button>
+            ><FontAwesomeIcon icon={faRightToBracket}/>Sign-in</button>
         </div>
       </form>
     </div>

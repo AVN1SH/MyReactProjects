@@ -14,6 +14,7 @@ import Signup from './pages/Signup.tsx'
 import Cart from "./pages/Cart.tsx"
 import Profile from "./pages/Profile.tsx"
 import Products from './pages/Products.tsx'
+import Orders from './pages/Orders.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,13 +22,17 @@ const router = createBrowserRouter(
       <Route path='' element={<Home />} />
       <Route path='/trending' element={<List data='trending component'/>} />
       <Route path='/mens-fashions' element={<List data='mens fashions'/>} />
-      <Route path='/mobiles-computers' element={<List data='mobiles and computers'/>} />
+      <Route path='/mobiles' element={<List data='mobiles'/>} />
+      <Route path='/computers' element={<List data='computers'/>} />
       <Route path='/electronics' element={<List data='electronics'/>} />
+      <Route path='/kids' element={<List data='kids'/>} />
+      <Route path='/grocery' element={<List data='grocery'/>} />
       <Route path='/customer-service' element={<List data='customer service'/>} />
       <Route path='/sign-in' element={<Signin />} />
       <Route path='/sign-up' element={<Signup />} />
       <Route path='/cart' element={<Cart />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/orders" element={<Orders/>} />
 
       <Route path="/products/:id" element={<Products/>} />
     </Route>

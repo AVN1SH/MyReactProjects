@@ -3,6 +3,13 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import {Link, Navigate} from "react-router-dom";
 import SignOut from './SignOut';
+//icons section here........
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown, faDolly, faShop, faShopLock } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons/faUserPlus';
+import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass';
 
 
 const NavigationBar = () => {
@@ -10,34 +17,41 @@ const NavigationBar = () => {
   return (
     <div className = "nav-bar">
       <div className = "left-part">
-          <img className = "logo" src = {logoIcon}></img>
+          {/* <img className = "logo" src = {logoIcon}></img> */}
+          {!authStatus && <FontAwesomeIcon className="logo" icon={faShopLock} />}
+          {authStatus && <FontAwesomeIcon className="logo" icon={faShop} />}
           <p className = "name">STORE</p>
       </div>
 
       <div className = "middle-part">
         <input type = "search" placeholder='Search'/>
-        <img src = "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/search_FILL0_wght400_GRAD0_opsz24.svg" />
+        <FontAwesomeIcon className="navigation-search-icon" icon={faMagnifyingGlass} />
       </div>
 
       <div className = "right-part">
+        { authStatus 
+          ? <Link className="navigation-user-icon-link" to="/profile">
+              <FontAwesomeIcon className="navigation-user-icon" icon={faUser} />
+              <h3>Avnish <FontAwesomeIcon icon={faCaretDown}/></h3>
+            </Link>
+          : <Link className="navigation-user-icon-link" to="/sign-in">
+            <FontAwesomeIcon className="navigation-user-icon" icon={faUser} />
+            <h3>Sign-In</h3>
+            </Link>
+        }
         {
-          !authStatus && <Link to="/sign-in">
-            <img src = "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/person_add_FILL0_wght400_GRAD0_opsz24.svg" />
+          !authStatus && <Link to="/sign-up">
+            <FontAwesomeIcon className="navigation-user-plus" icon={faUserPlus} />
           </Link>
         }
 
-        {
-          authStatus &&  <Link to="/profile">
-            <img src="https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/person_FILL0_wght400_GRAD0_opsz24.svg" />
-          </Link>
-        }
-
-        {
-          authStatus && <SignOut />  
-        }
+        {/* { authStatus && <Link className="navigation-order-icon-link" to="/orders">
+          <h3><FontAwesomeIcon icon={faDolly}/>Orders</h3>
+        </Link> } */}
+        { authStatus && <SignOut /> }
 
         <Link to="/cart"> 
-          <img src = "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/icons/add_shopping_cart_FILL0_wght400_GRAD0_opsz24.svg" />
+          <FontAwesomeIcon className="navigation-cart-icon" icon={faCartPlus} />
         </Link>
 
       </div>

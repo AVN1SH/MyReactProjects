@@ -1,42 +1,44 @@
-.cart-page {
-  height: 100vh;
-}
-.cart-product-list {
-  width : 70%;
-  height : 100vh;
-}
-/* individual product container, component : CartList.tsx */
 .individual-cart-list-container {
   display : flex;
-  margin-bottom : 10px;
   flex-direction : row;
   height : 170px;
   background-color: white;
   width: 100%;
+  border-radius: 7px;
+  border : 1px solid #006eff;
+  box-shadow: 0 0 5px #006eff7a;
 }
 .cart-product-image-select-container {
+  flex : 1;
   position: relative;
   background-color: white;
-  width : 20%;
   height: 100%;
   z-index: 1;
+  border-radius: 7px;
 }
 .cart-product-image-select-container img {
   width : 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 7px;
 }
 .cart-product-image-select-container select {
   position: absolute;
   bottom : 2%;
   right : 2%;
+  color : white;
+  background-color: #006eff;
+  border : none;
+  border-radius: 5px;
+  padding : 2px 2px 2px 0px;
+  outline : none;
 }
 .cart-product-details-container {
+  flex : 3.8;
   display : flex;
   flex-direction: column;
-  width: 70%;
   justify-content: space-between;
-  margin : 10px;
+  padding : 10px;
 }
 .cart-product-title {
   margin : 0;
@@ -45,9 +47,7 @@
   margin : 0;
 }
 .cart-product-stored-verified {
-  display : grid;
-  grid-template-columns: 30px 100px;
-  align-items: center;
+  
 }
 .cart-product-stored-verified p {
   margin : 0;
@@ -66,35 +66,19 @@
   font-weight: bold;
   font-size: 19px;
 }
-
-/* cart payment summary  */
-
-.cart-payment-summary {
-  position: fixed;
-  right : 20px;
-  top : 90px;
-  left : 76%;
-}
-
-.cart-payment-outer-container {
+.cart-product-price-stock-remove-container button {
   display : flex;
-  flex-direction: column;
-  padding: 20px;
+  gap : 5px;
+  padding : 5px 10px;
+  background-color: orangered;
+  border : none;
+  color : white;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
 }
-
-.cart-payment-payment-summary-container {
-  display: flex;
-  flex-direction : column;
-  justify-content: space-between;
-}
-
-.cart-payment-sub-total, .cart-payment-discount, .cart-payment-shipping-charge, .cart-payment-total-amount {
-  display : flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding : 10px;
-}
-
-.cart-continue-payment-button {
-  padding : 20px;
+.cart-product-price-stock-remove-container button:hover {
+  box-shadow: 0 0 2px orangered;
 }

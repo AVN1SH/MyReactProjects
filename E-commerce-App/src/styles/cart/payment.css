@@ -1,0 +1,41 @@
+.cart-payment-outer-container {
+  display : flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.cart-payment-payment-summary-container {
+  display: flex;
+  flex-direction : column;
+  justify-content: space-between;
+}
+
+.cart-payment-sub-total, .cart-payment-discount, .cart-payment-shipping-charge, .cart-payment-total-amount {
+  display : flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding : 10px;
+}
+
+.cart-continue-payment-button {
+  padding : 20px;
+  font-size: 14px;
+  color : white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap : 5px;
+  background-color: #006eff;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.cart-continue-payment-button svg {
+  width: 20px;
+  height: 20px;
+}
+.cart-continue-payment-button:hover {
+  box-shadow: 0 0 3px #006eff;
+}

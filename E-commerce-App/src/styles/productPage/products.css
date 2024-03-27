@@ -1,0 +1,85 @@
+.product-page-product-info-container {
+  display : flex;
+  position: relative;
+  flex-direction: row;
+}
+
+.product-page-image-container {
+  position : sticky;
+  flex : 1;
+  top : 90px;
+  left : 0;
+  width : 100%;
+  height : 200px;
+}
+
+.product-page-info-container {
+  flex : 2;
+  margin : 10px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.product-page-info-inner-container {
+  width : 100%;
+  height: 100%;
+  display : flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.product-page-title h3 {
+  margin : 0;
+}
+.product-page-price h2 {
+  margin : 0;
+}
+
+.product-page-rating-container {
+  display : grid;
+  grid-template-columns: 130px 20px;
+  align-items: center;
+}
+.product-page-rating {
+  display : inline-block;
+}
+.product-page-rating p{
+  display : inline-block;
+  margin : 0;
+}
+.product-page-verified {
+  display : grid;
+  grid-template-columns: 30px auto;
+  align-items: center;
+  margin : 0;
+}
+
+/* features css code here............ */
+
+.product-page-features-outer-container {
+  display : flex;
+  flex-direction : column;
+  overflow : hidden;
+  gap : 10px;
+}
+.product-page-features-container {
+  background-color: white;
+  display : flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  gap : 10px;
+  border-radius : 10px;
+}
+.product-page-features-image {
+  width : 17%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.product-page-features-content p {
+  margin-right : 10px;
+  color : rgb(84, 84, 84);
+}

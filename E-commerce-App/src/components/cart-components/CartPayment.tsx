@@ -1,6 +1,8 @@
 import {useSelector} from "react-redux";
 import {RootState} from "../../store/store";
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoneyCheck } from "@fortawesome/free-solid-svg-icons";
 
 const CartPayment = () => {
   const cartItems = useSelector( (state: RootState) => state.cartSlice.productsDetails);
@@ -31,14 +33,17 @@ const CartPayment = () => {
           <p>{totalItemPrice >=500 ? "Free" : "₹500"}</p>
         </div>
         <div className="cart-payment-total-amount">
-          <h5>Total : </h5>
-          <h5>{(totalItemPrice >= 500 ? totalItemPrice : totalItemPrice + 500).toLocaleString("en-IN", {
+          <h4>Total : </h4>
+          <h4>{(totalItemPrice >= 500 ? totalItemPrice : totalItemPrice + 500).toLocaleString("en-IN", {
             style : "currency",
             "currency" : "INR"
-          })}</h5>
+          })}</h4>
         </div>
       </div>
-        <button className="cart-continue-payment-button">Continue to Payment</button>
+        <button className="cart-continue-payment-button">
+          <FontAwesomeIcon icon={faMoneyCheck} />
+          Continue to Payment
+        </button>
     </div>
   )
 }

@@ -1,3 +1,6 @@
+@import "./rightPart.css";
+@import "./leftPart.css";
+
 .nav-bar {
   position : fixed;
   top : 0;
@@ -6,7 +9,8 @@
   display : flex;
   flex-direction : row;
   height : 50px;
-  background-color : rgb(44, 44, 44);
+  /* background-color : rgb(44, 44, 44); */
+  background-color: white;
   align-items : center;
   justify-content : space-between;
   z-index: 2;
@@ -15,7 +19,6 @@
 .left-part {
   width : 300px;
   height: 100%;
-  background-color : pink;
   display : flex;
   align-items: center;
 }
@@ -23,20 +26,21 @@
 .logo {
   width : 80px;
   height : 80%;
-  object-fit : fill;
+  color : #006eff;
+  filter : drop-shadow(0 0 1px #006eff);
 }
 
 .name {
   font-family : Lilita One;
-  color : rgb(40, 108, 203);
+  color : #006eff;
   font-weight : bold;
   font-size : 45px;
+  text-shadow: 0 0 1px #006eff;
 }
 
 .middle-part {
   width : 700px;
   height : 100%;
-  background-color : lightblue;
   display : flex;
   align-items: center;
   justify-content: center;
@@ -49,25 +53,20 @@
   font-size : 22px;
   padding-inline-start: 10px;
   padding-inline-end : 10px;
+  border-radius: 30px;
+  border : none;
+  /* background-color: rgba(255, 255, 255, 0.082); */
+  background-color: #cfcfcf;
 }
 
-.middle-part img {
-  width: 45px;
-  background-color: rgb(51, 166, 254);
-  margin-right : 30px;
-}
-
-.right-part {
-  width : 300px;
-  height : 100%;
-  background-color : pink;
-  display : grid;
-  grid-template-columns: 70px 60px;
-  align-items: center;
-  justify-content: right;
-}
-
-.right-part img {
-  width : 40px;
-  background-color: rgba(0, 0, 0, 0.244);
+.navigation-search-icon {
+  width: 22px;
+  height : 22px;
+  margin-left : 10px;
+  color : #006eff;
+  background-color: rgba(255, 255, 255, 0.082);
+  filter : drop-shadow(0 0 1px #006eff);
+  padding : 10px;
+  border-radius: 30px;
+  cursor : pointer;
 }

@@ -1,12 +1,14 @@
 .navigation2 {
-  background-color: rgb(139, 139, 139);
+  /* background-color: rgb(139, 139, 139); */
+
+  background : linear-gradient(to right, #006eff 50%, rgba(245, 245, 245, 0) 100%);
   position : absolute;
   z-index : 2;
   top : 0px;
   left : 0px;
   right : 10px;
   height : 30px;
-  clip-path: polygon(0 0, 100% 0%, 96% 100%, 0% 100%);
+  /* clip-path: polygon(0 0, 100% 0%, 96% 100%, 0% 100%); */
   display : flex;
   align-items : center;
 }
@@ -14,15 +16,18 @@
 .navigation2 p {
   margin : 0;
   margin-left : 10px;
+  color: white;
 }
 
 .outer-navigation2 {
   position : fixed;
   z-index : 2;
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  background : linear-gradient(to right, #0052bd 50%, rgba(245, 245, 245, 0) 100%);
+
   top : 50px;
   left : 250px;
   right : 340px;
   height : 35.5px;
-  clip-path: polygon(0 0, 100% 0%, 95.4% 100%, 0% 100%);
+  /* clip-path: polygon(0 0, 100% 0%, 95.4% 100%, 0% 100%); */
 }

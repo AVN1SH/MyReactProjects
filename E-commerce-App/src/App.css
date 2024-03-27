@@ -1,11 +1,13 @@
-@import "./styles/navigation.css";
+@import "./styles/navigation";
 @import "./styles/banner.css";
 @import "./styles/boxes.css";
 @import "./styles/smallBoxes.css";
 @import "./styles/leftSideBar.css";
 @import "./styles/navigation2.css";
-@import "./styles/cart.css";
-
+@import "./styles/productPage";
+@import "./styles/productVerified.css";
+@import "./styles/auth";
+@import "./styles/cart";
 body {
   margin : 0;
   padding: 90px 10px 10px 260px;

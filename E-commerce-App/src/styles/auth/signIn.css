@@ -1,0 +1,69 @@
+.sign-in-page-container {
+  display : flex;
+  flex-direction: row;
+  flex-wrap : wrap;
+  align-items: center;
+  gap : 10px;
+  height : calc(100vh - 100.5px);
+}
+
+.sign-in-page-signin-component {
+  flex : 2.5;
+  background-image: url(https://avn1sh.github.io/data/ecom-reactjs/images/svg/blob1.svg);
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  height : calc(100vh - 100.5px);
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 7px;
+  border-width: 1px;
+  border-style: solid;
+  border-color : #006eff;
+  box-shadow: 0 0 5px #006eff7a;
+  overflow: hidden;
+}
+.sign-in-page-signin-component::before {
+  content : '';
+  position : absolute;
+  bottom : 0;
+  right: 0;
+  width: 50%;
+  height : 50%;
+  background-image: url(https://avn1sh.github.io/data/ecom-reactjs/images/svg/blob2.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* backdrop-filter: blur(2px); */
+  border-radius: 7px;
+}
+
+/* direct api login component  */
+.sign-in-page-signin-api-component {
+  flex : 1;
+  height : calc(100vh - 100.5px);
+  width: 500px;
+  background-image: url(https://avn1sh.github.io/data/ecom-reactjs/images/svg/blob1.svg);
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 7px;
+  border-width: 1px;
+  border-style: solid;
+  border-color : #006eff;
+  box-shadow: 0 0 5px #006eff7a;
+}
+.sign-in-page-signin-api-component::before {
+  content : '';
+  position : absolute;
+  top : 0;
+  left : 0;
+  width: 100%;
+  height : 100%;
+  /* backdrop-filter: blur(2px); */
+  border-radius: 7px;
+}

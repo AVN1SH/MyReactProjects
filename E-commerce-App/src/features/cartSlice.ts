@@ -5,14 +5,13 @@ export interface CartState {
 }
 
 export interface ProductState {
-  id : string;
+  _id : string;
   name : string;
-  img : string;
+  image : string;
   price : number;
-  rating : number;
-  ratingImg : string[];
-  verified : string;
   stock : number;
+  rating : number;
+  verified : boolean;
   quantity : number;
 }
 
@@ -26,7 +25,7 @@ const cartSlice = createSlice({
   reducers : {
     add : (state, action) => {
       const product = action.payload;
-      const existingProduct =  state.productsDetails.find((item) => item.id === product.id);
+      const existingProduct =  state.productsDetails.find((item) => item._id === product._id);
       
       if(existingProduct){
         existingProduct.quantity += 1;
@@ -53,7 +52,7 @@ const cartSlice = createSlice({
 
     update : (state, action) => {
       const product  = action.payload;
-      const existingProduct = state.productsDetails.find((item) => item.id === product.id);
+      const existingProduct = state.productsDetails.find((item) => item._id === product._id);
 
       existingProduct!.quantity = product.quantity;
 

@@ -1,7 +1,9 @@
-import { api } from "../conf/conf.ts"
+import { api, productAPI } from "../conf/conf.ts"
 
 export interface CreateUserAccount {
-  name : string;
+  firstName : string;
+  middleName : string;
+  lastName : string;
   email : string;
   password : string;
 }
@@ -11,12 +13,36 @@ interface LoginUserAccount {
   password : string;
 }
 
+// Product interface 
+
+export interface ProductInfoType {
+  _id : string,
+  name : string,
+  specification : {
+    keys : [string],
+    values : [string]
+  }
+  description : [{
+    image : string;
+    title : string;
+    content : string;
+  }];
+  image : string;
+  imageCollection : [string]
+  price : number;
+  stock : number;
+  rating : number;
+  verified : boolean;
+}
+
 export class ExpressService {
 
-  async createAccount({name, email, password} : CreateUserAccount) {
+  async createAccount({firstName, middleName, lastName, email, password} : CreateUserAccount) {
     try {
       const response = await api.post("/register", {
-        name,
+        firstName,
+        middleName,
+        lastName,
         email,
         password,
         avatar : "",
@@ -80,6 +106,24 @@ export class ExpressService {
       await api.post("/logout");
     } catch (error) {
       console.log("logout not fetched, error : ", error);
+    }
+  }
+
+  async allProducts() {
+    const response = await productAPI.post("/");
+      if(response) {
+        return response.data.data;
+      } else {
+        console.error("failed to fetch product data");
+      }
+  }
+
+  async filteredProduct(id : string) {
+    const response = await productAPI.post(`/${id}`);
+    if(response) {
+      return response.data.data;
+    } else {
+      console.error("failed to get filtered data");
     }
   }
 }

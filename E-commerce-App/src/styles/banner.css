@@ -1,7 +1,7 @@
 
 .banner-image {
-  background-color : pink;
-  height : 310px;
+  height : 250px;
+  border-radius: 7px;
 }
 
 .banner-image img {

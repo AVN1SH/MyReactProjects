@@ -1,0 +1,76 @@
+.sign-in-by-api-container {
+  position : relative;
+  background-color: rgba(255, 255, 255, 0.962);
+  width: 250px;
+  height : 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding : 10px;
+  border-radius: 7px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #006eff;
+  box-shadow: 0 0 5px #006eff7a;
+  overflow: hidden;
+}
+.sign-in-by-api-container::before {
+  content : '';
+  position: absolute;
+  top : -40px;
+  right : -40px;
+  width: 150px;
+  height: 150px;
+  background-color: #006eff;
+  border-radius: 100px;
+  filter : blur(1px);
+}
+
+.sign-in-by-api-container::after {
+  content : '';
+  position: absolute;
+  top : 10px;
+  left : -30px;
+  width: 70px;
+  height: 70px;
+  background-color: #006eff;
+  border-radius: 100px;
+  filter : blur(1px);
+}
+.sign-in-by-api-container h2, button {
+  z-index: 1;
+}
+.sign-in-by-api-container button {
+  border : none;
+  width: 100%;
+  padding : 10px;
+  color : white;
+  font-weight: bold;
+  border-radius: 7px;
+  cursor: pointer;
+  gap : 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.15s;
+}
+
+.sign-in-by-api-container button:nth-child(2) {
+  background-color: orangered;
+}
+.sign-in-by-api-container button:nth-child(2):hover {
+  box-shadow: 0 0 3px orangered;
+} 
+.sign-in-by-api-container button:nth-child(3) {
+  background-color: #006eff;
+}
+.sign-in-by-api-container button:nth-child(3):hover {
+  box-shadow: 0 0 3px #006eff;
+}
+.sign-in-by-api-container button:nth-child(4) {
+  background-color: #a2a2a2;
+}
+.sign-in-by-api-container button:nth-child(4):hover {
+  box-shadow: 0 0 3px #a2a2a2;
+}

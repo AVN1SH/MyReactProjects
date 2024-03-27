@@ -1,0 +1,33 @@
+.product-page-buttons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:  space-between;
+  gap : 10px;
+}
+
+.product-page-cart-button {
+  border : none;
+  flex : 1;
+  background-color: rgb(255, 146, 13);
+  padding : 20px 0px;
+  font-size: 18px;
+  cursor : pointer;
+  color : rgb(50, 50, 50);
+  border-radius: 8px;
+  box-shadow: inset 0px 0px 10px rgb(189, 104, 0);
+  color : white;
+}
+
+.product-page-buy-now-button {
+  border : none;
+  width : 100%;
+  background-color: rgb(255, 187, 0);
+  padding : 20px 10px;
+  font-size: 18px;
+  cursor : pointer;
+  color : rgb(50, 50, 50);
+  border-radius: 8px;
+  box-shadow: inset 0px 0px 10px rgb(210, 143, 0);
+  color : white;
+}

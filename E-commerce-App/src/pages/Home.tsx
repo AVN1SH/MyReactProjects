@@ -3,7 +3,7 @@ import Box from "../components/product-layout/Box.tsx";
 import SmallBox from "../components/product-layout/SmallBox.tsx"
 import Banner from "../components/Banner.tsx";
 import {useEffect, useState} from "react";
-// import axios from "axios";
+import expressService, { ProductInfoType } from "../appwrite/express.ts";
 export interface ProductType{
     name : string;
     img : string;
@@ -13,30 +13,41 @@ export interface ProductType{
     verified : string;
 }
 
+interface TestProducts {
+  _id : string,
+  name : string,
+  description : [{
+    image : string;
+    title : string;
+    content : string;
+  }];
+  image : string;
+  price : number;
+  stock : number;
+  rating : number;
+  verified : boolean;
+}
+
 const Home = () => {
   
-  let [slideCount, setSlideCount] = useState(0);
-  // const [productInfo, setProductInfo] = useState<ProductType[]>([]);
-
-
-  // useEffect(() => {
-  //   const fetchData =async () => {
-  //     try {
-  //       const response = await axios.get("/api/products");
-  //       setProductInfo(response.data);
-  //     } catch (error) {
-  //       console.log("failed to fetch api : ", error)
-  //     }
-  //   }
-    
-  //   fetchData();
-  // }, []);
+  const [slideCount, setSlideCount] = useState(0);
 
   const bannerInfo = [
-    "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/images/banner-image-1.jpg",
-    "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/images/banner-image-2.webp",
-    "https://avn1sh.github.io/MyReactProjects/E-commerce-App/src/data/images/banner-image-3.jpg",
+    "https://avn1sh.github.io/data/ecom-reactjs/images/banner-image-1.jpg",
+    "https://avn1sh.github.io/data/ecom-reactjs/images/banner-image-2.webp",
+    "https://avn1sh.github.io/data/ecom-reactjs/images/banner-image-3.jpg",
   ];
+
+  const [products, setProducts] = useState<ProductInfoType[]>([]);
+
+  useEffect(() => {
+    expressService.allProducts()
+    .then((productInfo) => {
+      if(productInfo) {
+        setProducts(productInfo);
+      }
+    })
+  }, []);
 
   const renderBanner = () => {
     const comp = bannerInfo.map((info, index) => {
@@ -65,31 +76,31 @@ const Home = () => {
       }
       <h1>Our Products</h1>
       <div className="boxes">
-        {/* {
-          productInfo.map((product) => (<Box key={product.name} boxDetails={product} />))
-        } */}
-        <Box boxDetails = {productInfo[0]}/>
+        {
+          products.length && products.map((product) => (<Box key={product._id} boxDetails={product} />))
+        }
+        {/* <Box boxDetails = {productInfo[0]}/>
         <Box boxDetails = {productInfo[1]}/>
         <Box boxDetails = {productInfo[2]}/>
-        <Box boxDetails = {productInfo[3]}/>
+        <Box boxDetails = {productInfo[3]}/> */}
       </div>
       <h1>Shop From Amazon</h1>
       <div className="small-boxes">
+        {/* <SmallBox boxDetails=  {productInfo[0]}/>
         <SmallBox boxDetails=  {productInfo[0]}/>
         <SmallBox boxDetails=  {productInfo[0]}/>
         <SmallBox boxDetails=  {productInfo[0]}/>
         <SmallBox boxDetails=  {productInfo[0]}/>
-        <SmallBox boxDetails=  {productInfo[0]}/>
-        <SmallBox boxDetails=  {productInfo[0]}/>
+        <SmallBox boxDetails=  {productInfo[0]}/> */}
       </div>
       <h1>Shop From Flipkart</h1>
       <div className="small-boxes">
+        {/* <SmallBox boxDetails=  {productInfo[0]}/>
         <SmallBox boxDetails=  {productInfo[0]}/>
         <SmallBox boxDetails=  {productInfo[0]}/>
         <SmallBox boxDetails=  {productInfo[0]}/>
         <SmallBox boxDetails=  {productInfo[0]}/>
-        <SmallBox boxDetails=  {productInfo[0]}/>
-        <SmallBox boxDetails=  {productInfo[0]}/>
+        <SmallBox boxDetails=  {productInfo[0]}/> */}
       </div>
     </div>
   )

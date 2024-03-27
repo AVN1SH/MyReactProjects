@@ -16,5 +16,9 @@ import axios from "axios"
 const api = axios.create({
   baseURL : `${import.meta.env.VITE_MY_API_URI}/api/v1/users`,
   withCredentials : true
+});
+const productAPI = axios.create({
+  baseURL : `${import.meta.env.VITE_MY_API_URI}/api/v1/product`,
+  withCredentials : true
 })
-export {api}
+export {api, productAPI}

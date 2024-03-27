@@ -1,4 +1,6 @@
-import {useId, forwardRef,  InputHTMLAttributes } from "react"
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {useState, useId, forwardRef,  InputHTMLAttributes } from "react"
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label : string;
@@ -11,21 +13,39 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   ...props
 }, ref) => {
   const id = useId();
+  const [avatar, setAvatar] = useState<File | null>(null);
 
+  
   return (
-    <div>
+    <div className="label-input-container"
+    style={avatar 
+      ? {"backgroundImage" : `url(${URL.createObjectURL(avatar)})`, "backgroundSize" : "cover", "backgroundPosition" : "center"} 
+      : {}}
+    >
       {
-        label && <label
-          htmlFor = {id}>
-            {label}
+        label &&
+        type === "file" ?
+          <label htmlFor={id}>{!avatar && 
+          <FontAwesomeIcon icon={faUpload} />}
+          {!avatar && label}
+          </label>
+        :
+          <label htmlFor = {id}>
+              {label}
           </label>
       }
-      <input 
-        type={type}
-        ref={ref}
+      {type === "file" ?
+        <input type={type} ref={ref}
+        {...props}
+        id = {id}
+        onChange={(e) => e.target.files && setAvatar(e.target.files[0])}
+      />
+      :
+      <input type={type} ref={ref}
         {...props}
         id = {id}
       />
+      } 
     </div>
   )
 })

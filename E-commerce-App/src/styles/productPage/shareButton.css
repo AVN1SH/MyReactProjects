@@ -1,0 +1,33 @@
+.product-page-share-button-container {
+  background-color: rgb(213, 213, 213);
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top : 50px;
+  right : 0;
+  width: 30px;
+  height: fit-content;
+  gap : 8px;
+  padding : 10px;
+  border-radius: 10px;
+}
+
+.product-page-share-button-container * {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.share-button-whatsapp {
+  color : green;
+}
+.share-button-insta {
+  color : orangered;
+}
+.share-button-facebook {
+  color : rgb(0, 156, 254);
+}
+.share-button-share-node {
+  color : rgb(65, 65, 65);
+}

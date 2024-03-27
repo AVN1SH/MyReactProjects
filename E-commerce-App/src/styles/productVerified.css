@@ -1,0 +1,38 @@
+.product-verified-container {
+  width: 115px;
+  height: 25px;
+  position: relative;
+  display : flex;
+  flex-direction: row;
+  align-items:center;
+  gap : 2px;
+}
+.product-verified-certificate {
+  z-index: 1;
+  width: 30%;
+  height: 100%;
+  color : rgb(0, 190, 215);
+  filter : drop-shadow(0 0 1px rgba(0, 0, 0, 0.593));
+}
+
+.product-verified-check {
+  position: absolute;
+  z-index: 2;
+  color : white;
+  top : 50%;
+  left : 15.5%;
+  transform: translate(-50%, -50%);
+  width : 12px;
+}
+
+.product-verified-container h5 {
+  position: absolute;
+  left : 10%;
+  width: 70%;
+  font-size: 11px;
+  background-color: rgb(1, 152, 172);
+  color : white;
+  padding : 2px 2px 2px 22px;
+  border-radius: 4px;
+  box-shadow : 0 0 2px rgba(0, 0, 0, 0.593);
+}
