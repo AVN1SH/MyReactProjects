@@ -3,6 +3,10 @@
   flex-direction: column;
   padding: 10px;
 }
+.cart-payment-outer-container > a {
+  text-decoration: none;
+  color : inherit;
+}
 
 .cart-payment-payment-summary-container {
   display: flex;
@@ -18,6 +22,8 @@
 }
 
 .cart-continue-payment-button {
+  width: 100%;
+  height: 100%;
   padding : 20px;
   font-size: 14px;
   color : white;

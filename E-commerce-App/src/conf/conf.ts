@@ -20,5 +20,13 @@ const api = axios.create({
 const productAPI = axios.create({
   baseURL : `${import.meta.env.VITE_MY_API_URI}/api/v1/product`,
   withCredentials : true
+});
+const mailAPI = axios.create({
+  baseURL : `${import.meta.env.VITE_MY_API_URI}/api/v1/mail`,
+  withCredentials : true
+});
+const messageAPI = axios.create({
+  baseURL : `${import.meta.env.VITE_MY_API_URI}/api/v1/message`,
+  withCredentials : true
 })
-export {api, productAPI}
+export {api, productAPI, mailAPI, messageAPI}

@@ -10,12 +10,14 @@ function App() {
 
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
+  const [userName, setUserName] = useState('');
 
   useEffect((() => {
     expressService.getCurrentUser()
       .then((userData) => {
         if(userData) {
           dispatch(login({userData}))
+          setUserName(userData.data.firstName)
         } else {
           dispatch(logout())
         }
@@ -25,7 +27,7 @@ function App() {
 
   return (
     <div>
-      <NavigationBar />
+      <NavigationBar userName={userName}/>
       <NavigationBar2 deals = "Top treding deals of this week | upto 50% off"/>
       <LeftSideBar />
       <main>

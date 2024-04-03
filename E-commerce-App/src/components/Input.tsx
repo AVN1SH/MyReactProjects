@@ -1,50 +1,80 @@
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {useState, useId, forwardRef,  InputHTMLAttributes } from "react"
+import {useState, useId, forwardRef,  InputHTMLAttributes, useEffect } from "react"
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label : string;
   type : string;
+  field ?: string;
+  authData ?: string;
+  userOTP ?: string;
+  OTP  ?: number | null;
+  avatar ?: FileList | null;
+  error ?: boolean;
+ 
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(({
   label, 
   type ='text', 
+  field,
+  authData,
+  userOTP,
+  OTP,
+  avatar,
+  error,
   ...props
 }, ref) => {
   const id = useId();
-  const [avatar, setAvatar] = useState<File | null>(null);
+  const [isValid, setIsValid] = useState<boolean | null>(null);
+  const [onFocus, setOnFocus] = useState(false);
+
+  useEffect(() => {
+    if(onFocus) {
+      if(OTP == Number(userOTP)) {
+        setIsValid(true);
+      } else {
+        setIsValid(false);
+      }
+    }
+  }, [userOTP, onFocus, OTP])
 
   
   return (
     <div className="label-input-container"
-    style={avatar 
-      ? {"backgroundImage" : `url(${URL.createObjectURL(avatar)})`, "backgroundSize" : "cover", "backgroundPosition" : "center"} 
+    style={avatar && avatar !== null && avatar?.length > 0
+      ? {backgroundImage :`url(${URL.createObjectURL(avatar[0])})`, "backgroundSize" : "cover", "backgroundPosition" : "center"} 
       : {}}
     >
       {
         label &&
         type === "file" ?
-          <label htmlFor={id}>{!avatar && 
+          <label htmlFor={id}>{!(avatar && avatar !== null && avatar?.length > 0) && 
           <FontAwesomeIcon icon={faUpload} />}
-          {!avatar && label}
+          {!(avatar && avatar !== null && avatar?.length > 0) && label}
           </label>
         :
           <label htmlFor = {id}>
               {label}
           </label>
       }
-      {type === "file" ?
+      {
         <input type={type} ref={ref}
-        {...props}
-        id = {id}
-        onChange={(e) => e.target.files && setAvatar(e.target.files[0])}
-      />
-      :
-      <input type={type} ref={ref}
-        {...props}
-        id = {id}
-      />
+          {...props}
+          id = {id}
+          onFocus={() => setOnFocus(true)}
+          onBlur={() => setOnFocus(false)}
+          style={field === 'OTP' 
+            ? isValid !== null 
+              ? ({
+                borderColor : isValid ? "#00aa00" : "red", 
+                boxShadow : onFocus ? isValid ? "0 0 3px #00aa00" : "0 0 3px red" : ""
+              })
+              : {"borderColor" : "#006eff", boxShadow : onFocus ? "0 0 3px #0063ff" : ""}
+            : {borderColor : error ? "red" : "#006eff", 
+              boxShadow : onFocus ? error ? "0 0 3px red" : "0 0 3px #0063ff" : ""}
+          }
+        />      
       } 
     </div>
   )

@@ -37,6 +37,12 @@
 }
 .form-info-container {
   z-index: 0;
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-info-container > p {
+  
 }
 .form-container form{
   width: 100%;
@@ -51,12 +57,14 @@
   justify-content: space-between;
   gap : 20px;
 }
+.form-errors {
+  color : red;
+  font-size: 12px;
+  padding-left : 5px;
+}
 .label-input-container {
   display: flex;
   flex-direction: column;
-  flex-wrap: 0;
-  flex-grow: 0;
-  flex-shrink: 0;
   gap : 2px;
 }
 .label-input-container label {
@@ -73,10 +81,10 @@
   transition: 0.25s;
 }
 .label-input-container input:focus {
-  box-shadow: 0 0 5px  #006eff7a;
+  /* box-shadow: 0 0 5px  #006eff7a; */
   outline: none;
 }
-.form-container button {
+.inner-form-container > button {
   width: 100%;
   font-size: large;
   font-weight: bold;
@@ -92,6 +100,6 @@
   gap : 10px;
   transition: 0.25s;
 }
-.form-container button:hover {
+.inner-form-container > button:hover {
   box-shadow: 0 0 3px  #006eff;
 }

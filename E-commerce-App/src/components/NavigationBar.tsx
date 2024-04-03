@@ -11,8 +11,11 @@ import { faUserPlus } from '@fortawesome/free-solid-svg-icons/faUserPlus';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass';
 
+interface UserData {
+  userName : string;
+}
 
-const NavigationBar = () => {
+const NavigationBar = ( {userName} : UserData) => {
   const authStatus = useSelector((state : RootState) => state.authSlice.status);
   return (
     <div className = "nav-bar">
@@ -32,7 +35,7 @@ const NavigationBar = () => {
         { authStatus 
           ? <Link className="navigation-user-icon-link" to="/profile">
               <FontAwesomeIcon className="navigation-user-icon" icon={faUser} />
-              <h3>Avnish <FontAwesomeIcon icon={faCaretDown}/></h3>
+              <h3>{userName} <FontAwesomeIcon icon={faCaretDown}/></h3>
             </Link>
           : <Link className="navigation-user-icon-link" to="/sign-in">
             <FontAwesomeIcon className="navigation-user-icon" icon={faUser} />

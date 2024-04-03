@@ -1,10 +1,12 @@
-import { api, productAPI } from "../conf/conf.ts"
+import { api, mailAPI, messageAPI, productAPI } from "../conf/conf.ts"
 
 export interface CreateUserAccount {
   firstName : string;
   middleName : string;
   lastName : string;
+  avatar ?: File;
   email : string;
+  mobNum ?: string;
   password : string;
 }
 
@@ -37,17 +39,18 @@ export interface ProductInfoType {
 
 export class ExpressService {
 
-  async createAccount({firstName, middleName, lastName, email, password} : CreateUserAccount) {
+  async createAccount({avatar, firstName, middleName, lastName, email, mobNum, password} : CreateUserAccount) {
     try {
-      const response = await api.post("/register", {
-        firstName,
-        middleName,
-        lastName,
-        email,
-        password,
-        avatar : "",
-        coverImage : ""
-      });
+      console.log(avatar);
+      const formData = new FormData();
+      formData.append("firstName", firstName);
+      formData.append("middleName", middleName);
+      formData.append("lastName", lastName);
+      formData.append("email", email);
+      formData.append("avatar", avatar || "");
+      formData.append("mobNum", mobNum ? "+91" + mobNum : "");
+      formData.append("password", password);
+      const response = await api.post("/register", formData);
 
       if(response.data) {
         const { accessToken, refreshToken, user } = response.data.data;
@@ -57,8 +60,8 @@ export class ExpressService {
       } else {
         console.error("error while registeration : ");
       }
-    } catch(error) {
-      console.log("error while creating accout : ", error);
+    } catch(error : any) {
+      throw new Error(error.response.status)
     }
   }
 
@@ -78,8 +81,8 @@ export class ExpressService {
       } else {
         console.error('Login failed:', response.data.error);
       }
-    } catch (error) {
-      console.error('Error during login:');
+    } catch (error : any) {
+      throw new Error(error.response.status)
     }
   }
 
@@ -109,6 +112,8 @@ export class ExpressService {
     }
   }
 
+  //Fetching products from express
+
   async allProducts() {
     const response = await productAPI.post("/");
       if(response) {
@@ -125,6 +130,37 @@ export class ExpressService {
     } else {
       console.error("failed to get filtered data");
     }
+  }
+
+  //Fetching verification api from express
+
+  async mailverification(email : string) {
+    try {
+      const response = await mailAPI.post("/send/otp", {
+        mailAdd : email
+      });
+  
+      if(!response) throw new Error("Error while sending Email");
+      
+      return response.data.data;
+    } catch (error : any) {
+      throw new Error(error.response.status);
+    }
+  }
+  async mobNumVerification(mobNum : string) {
+    try {
+      const response = await messageAPI.post("/send/otp", {
+        mobileNum : mobNum
+      });
+      
+      if(!response) throw new Error("Error while sending message");
+
+      return response.data.data
+    } catch (error : any) {
+      console.log(error.response.status);
+      throw new Error(error.response.status);
+    }
+
   }
 }
 

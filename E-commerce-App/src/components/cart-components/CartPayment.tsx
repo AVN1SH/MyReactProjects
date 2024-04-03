@@ -3,6 +3,7 @@ import {RootState} from "../../store/store";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoneyCheck } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const CartPayment = () => {
   const cartItems = useSelector( (state: RootState) => state.cartSlice.productsDetails);
@@ -40,10 +41,12 @@ const CartPayment = () => {
           })}</h4>
         </div>
       </div>
+      <Link to="/checkout">
         <button className="cart-continue-payment-button">
           <FontAwesomeIcon icon={faMoneyCheck} />
           Continue to Payment
         </button>
+      </Link>
     </div>
   )
 }
